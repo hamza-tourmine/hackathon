@@ -5,12 +5,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth ;
-class auth_controller extends Controller
+class AuthController extends Controller
 
 {
     public function index()
     {
-        return view('auth.create-account');
+        return view('login');
     }
 
     // create an  account
@@ -57,7 +57,6 @@ class auth_controller extends Controller
         // Attempt authentication for admin role
         if (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'admin'])) {
             $request->session()->regenerate();
-            // store id in session
             $user = auth::user();
             session(
                 [
@@ -66,13 +65,9 @@ class auth_controller extends Controller
                     'establishment_id' => $user->establishment_id
                 ]
             );
-
-
-
-
             return redirect()->route('dashboardAdmin');
         }
-        // Attempt authentication for formateur role
+       
         elseif (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'formateur'])) {
             $user = Auth::user();
             if ($user->status == 'active') {
@@ -92,9 +87,7 @@ class auth_controller extends Controller
             ])->onlyInput('id');
         }
     }
-
     // logout
-
     // public function logout(Request $request)
     // {
     //     Auth::logout();

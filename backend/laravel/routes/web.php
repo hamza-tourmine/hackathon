@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\forgotPassword;
-use App\Http\Controllers\auth_controller;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ajouterRegions;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\intervenants;
+
 use App\Models\User;
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +30,16 @@ use App\Models\User;
    // return  a view for page  that can  return view for page   change password
 //    Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
 
-   Route::get('/login', [forgotPassword::class, 'resetPasswordView']);
-   //login and  create an account
+   Route::get('/login', [AuthController::class, 'index']);
+   Route::post('/login', [AuthController::class, 'login'])->name('login_into_account');
+   //login and  create an accoun
 
+
+
+
+// CRUD intervenats
+Route::get('/ajouter-intervenants' , [intervenants::class , 'index']);
+
+// CRUD Region
+Route::get('/ajouter-region' , [ajouterRegions::class , 'index'])->name('ajouter-region');
+Route::post('/insertRegion' , [ajouterRegions::class , 'insert'])->name('insertRegion');
