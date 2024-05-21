@@ -1,0 +1,14 @@
+.Container{
+    height: 100vh;
+    background-color: var(--primary-color-opacity);
+    width:25vw ;
+}
+.Container ul{
+   font-size:17px ;
+   font-weight: 500;
+   list-style: none;
+}
+.Container ul li {
+    padding-top : 10px ;
+    padding-right :10px ;
+}

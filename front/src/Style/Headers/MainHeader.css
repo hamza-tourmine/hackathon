@@ -1,0 +1,126 @@
+.HeaderContainer {
+    width: 99vw;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    border-bottom: 1.3px solid rgb(202, 200, 200 , 0.5);
+}
+.PartOne{
+    width: calc(100% /2.3 ) ;
+}
+.PartOne ul { 
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 18px ;
+    font-weight: 400;
+   
+}
+.PartOne ul li:hover {
+    cursor: pointer;
+    color:var(--primary-color) ;
+}
+.PartTwo {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 4) ;
+}
+.PartTwo :first-child {
+    font-size: 20px;
+    font-weight: 700;
+}
+.PartTree{
+    max-width:100%;
+    height: 43px;
+    border: 1px solid  gray;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top:10px ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: calc(100% /2.3) ;
+}
+.PartFor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin-left: 1rem;
+   
+}
+.loginIcon{
+    margin-left:2.5rem ;
+    cursor: pointer;
+}
+.cardIcon{
+    margin-right: 5px;
+    cursor: pointer;
+}
+.cardIcon{
+    color: rgb(42, 42, 148);
+}
+.PartTree:hover {
+    background-color: rgba(222, 222, 230, 0.1);
+}
+.SearchSmoolScreen{
+    display: none !important;
+    margin-right: 2.5rem;
+}
+.SearchIcon{
+    color: rgb(40, 40, 114);
+    margin-left: 5px ;
+}
+.BurgerIcon{
+    display: none !important;
+}
+@media screen and (max-width:850px){
+    .PartTree {
+        display: none;
+    }
+    .SearchSmoolScreen{
+        cursor: pointer;
+        display: block !important;
+    }
+}
+@media  screen and (max-width:700px) {
+    .PartOne ul{
+        display: none;
+    }
+    .BurgerIcon{
+        display: block !important;
+        cursor: pointer;
+    }
+    .PartOne{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% /4) !important ;
+      
+    }
+    .HeaderContainer{
+        width: 97vw;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .PartOne {
+        width: 50%;
+    }
+    .PartTwo, .PartTree {
+        width: 25%;
+    }
+}
+
+.PartTree input[type="search"] {
+    height: 35px;
+    border-radius: 5px ;
+    outline: 0px;
+    width: 200px;
+    padding: 5px;
+}
