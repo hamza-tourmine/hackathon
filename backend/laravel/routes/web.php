@@ -27,3 +27,7 @@ use App\Models\User;
    Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
    //login and  create an account
 
+
+Route::get('/register', function () {
+    return view('register');
+});

@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title ?? 'Hackathon' }}</title>
-    
+
 
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
+<!-- CSS de Bootstrap 4 -->
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
