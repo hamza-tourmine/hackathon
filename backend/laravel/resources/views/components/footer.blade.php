@@ -157,7 +157,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; Copyright 2020. All Rights Reserved by <a href="#"> validtemplates</a></p>
+                    <p>&copy; Copyright 2020. All Rights Reserved by <a href="#"> GROUP ISTA BEN M'SIK</a></p>
                 </div>
                 <div class="col-md-6 text-right link">
                     <ul>

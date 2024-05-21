@@ -54,9 +54,7 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">HOME</a>
                     </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">REGION</a>
-                    </li>
+                    
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ETABLISSEMENT</a>
                     </li>
@@ -64,7 +62,6 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">AJOUTER EMPLOYEE</a>
                         <ul class="dropdown-menu">
-                            <li><a href="">GERANT REGIONAL</a></li>
                             <li><a href="">GERANT LOCAL</a></li>
                             <li><a href="">INTERVENANT</a></li>
                         </ul>
