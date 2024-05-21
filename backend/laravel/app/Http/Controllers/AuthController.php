@@ -103,4 +103,6 @@ class auth_controller extends Controller
         // Redirect to the home page or any other desired page
         return redirect('/');
     }
+
+
 }
