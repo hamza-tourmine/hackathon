@@ -14,34 +14,34 @@ class auth_controller extends Controller
     }
 
     // create an  account
-    public function create_account(Request $request)
-    {
-        $validatedData = $request->validate([
-            'id' => 'required',
-            'user_name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-            'role' => 'required',
-            'name_establishment' => 'required'
-        ]);
+    // public function create_account(Request $request)
+    // {
+    //     $validatedData = $request->validate([
+    //         'id' => 'required',
+    //         'user_name' => 'required',
+    //         'email' => 'required|email|unique:users',
+    //         'password' => 'required|min:6',
+    //         'role' => 'required',
+    //         'name_establishment' => 'required'
+    //     ]);
 
-        $user = User::create([
-            'id' => $validatedData['id'],
-            'user_name' => $validatedData['user_name'],
-            'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']),
-
-
-        ]);
+    //     $user = User::create([
+    //         'id' => $validatedData['id'],
+    //         'user_name' => $validatedData['user_name'],
+    //         'email' => $validatedData['email'],
+    //         'password' => bcrypt($validatedData['password']),
 
 
+    //     ]);
 
-        if ($user) {
-            return redirect()->route('login')->with('success', 'Account created successfully');
-        } else {
-            return redirect()->route('create-account')->with('error', 'Failed to create account');
-        }
-    }
+
+
+    //     if ($user) {
+    //         return redirect()->route('login')->with('success', 'Account created successfully');
+    //     } else {
+    //         return redirect()->route('create-account')->with('error', 'Failed to create account');
+    //     }
+    // }
     // login
     public function login(Request $request)
     {
@@ -95,12 +95,12 @@ class auth_controller extends Controller
 
     // logout
 
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        // Invalidate the session
-        $request->session()->invalidate();
-        // Redirect to the home page or any other desired page
-        return redirect('/');
-    }
+    // public function logout(Request $request)
+    // {
+    //     Auth::logout();
+    //     // Invalidate the session
+    //     $request->session()->invalidate();
+    //     // Redirect to the home page or any other desired page
+    //     return redirect('/');
+    // }
 }

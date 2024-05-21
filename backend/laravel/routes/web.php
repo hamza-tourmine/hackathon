@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\forgotPassword;
+use App\Http\Controllers\auth_controller;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 /*
@@ -15,12 +16,14 @@ use App\Models\User;
 */
 
    // retreve password  && forgot password Routes
-   Route::post('/forgot-password', [forgotPassword::class, 'forgotPassword'])->name('forgotPassword');
+//    Route::post('/forgot-password', [forgotPassword::class, 'forgotPassword'])->name('forgotPassword');
    // return view for forgot password page
-   Route::get('/forgot-password', [forgotPassword::class, 'index'])->name('ForgotPassword');
+//    Route::get('/forgot-password', [forgotPassword::class, 'index'])->name('ForgotPassword');
    // retrve  new passeword
-   Route::post('/reset-Password', [forgotPassword::class, 'resetPassword'])->name('resetPassword');
+//    Route::post('/reset-Password', [forgotPassword::class, 'resetPassword'])->name('resetPassword');
    // return  a view for page  that can  return view for page   change password
-   Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
+//    Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
+
+   Route::get('/login', [forgotPassword::class, 'resetPasswordView']);
    //login and  create an account
 
