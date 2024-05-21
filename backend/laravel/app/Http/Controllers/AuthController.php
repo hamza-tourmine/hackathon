@@ -47,80 +47,24 @@ class AuthController extends Controller
     {
         // Validate request data
         $credentials = $request->validate([
-            'id' => ['required'],
             'password' => ['required'],
         ]);
-
-        // Remove extra spaces from 'id' key to ensure consistency
-        $credentials['id'] = trim($credentials['id']);
-
+       
         // Attempt authentication for admin role
-        if (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'gerantCentral'])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
             $user = auth::user();
             session(
                 [
                     'user_name' => $user->user_name,
                     'user_id' => $user->id,
-                    'establishment_id' => $user->establishment_id ,
+                   
                 ]
             );
-            return redirect()->route('dashboardAdmin');
+            return redirect()->route('');
         }
        
-        elseif (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'gerantrgional'])) {
-            $user = Auth::user();
-            if ($user->status == 'active') {
-                $request->session()->regenerate();
-                // store id in session
-                session(['user_id' => $user->id, 'establishment_id' => $user->establishment_id]);
-
-                return redirect()->route('dashboard_formateur');
-            } else {
-                return redirect()->back()->withErrors(['errors' => 'Votre compte est suspendu, veuillez contacter le directeur']);
-            }
-        }
-
-        elseif (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'gerantlocal'])) {
-            $user = Auth::user();
-            if ($user->status == 'active') {
-                $request->session()->regenerate();
-                // store id in session
-                session(['user_id' => $user->id, 'establishment_id' => $user->establishment_id]);
-
-                return redirect()->route('dashboard_formateur');
-            } else {
-                return redirect()->back()->withErrors(['errors' => 'Votre compte est suspendu, veuillez contacter le directeur']);
-            }
-        }
-
-        elseif (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'intervenant'])) {
-            $user = Auth::user();
-            if ($user->status == 'active') {
-                $request->session()->regenerate();
-                // store id in session
-                session(['user_id' => $user->id, 'establishment_id' => $user->establishment_id]);
-
-                return redirect()->route('dashboard_formateur');
-            } else {
-                return redirect()->back()->withErrors(['errors' => 'Votre compte est suspendu, veuillez contacter le directeur']);
-            }
-        }
-
-        elseif (Auth::attempt(['id' => $credentials['id'], 'password' => $credentials['password'], 'role' => 'entreprise'])) {
-            $user = Auth::user();
-            if ($user->status == 'active') {
-                $request->session()->regenerate();
-                // store id in session
-                session(['user_id' => $user->id, 'establishment_id' => $user->establishment_id]);
-
-                return redirect()->route('dashboard_formateur');
-            } else {
-                return redirect()->back()->withErrors(['errors' => 'Votre compte est suspendu, veuillez contacter le directeur']);
-            }
-        }
-
-
+   
         // Authentication failed
         else {
             return back()->withErrors([

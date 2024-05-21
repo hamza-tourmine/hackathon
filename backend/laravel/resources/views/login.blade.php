@@ -49,14 +49,14 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Email*" type="email">
+                                    <input class="form-control" name="email" placeholder="Email*" type="email">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password*" type="text">
+                                    <input class="form-control" name="password" placeholder="Password*" type="text">
                                 </div>
                             </div>
                         </div>
