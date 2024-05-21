@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title ?? 'Hackathon' }}</title>
-
-
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
-
     <!-- ========== Start Stylesheet ========== -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" />
@@ -21,7 +18,6 @@
     <link href="{{ asset('assets/css/bootsnav.css') }}" rel="stylesheet" />
     <link href="{{ asset('style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
-
 </head>
 <body>
 <div class="login-area default-padding">

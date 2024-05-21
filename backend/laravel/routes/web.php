@@ -30,4 +30,5 @@ use App\Models\User;
    // return  a view for page  that can  return view for page   change password
    Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
    //login and  create an account
-
+   Route::get('/login', [AuthController::class , 'index'])->name('login');
+   Route::get('/login_into_account', [AuthController::class , 'login'])->name('login_into_account');
