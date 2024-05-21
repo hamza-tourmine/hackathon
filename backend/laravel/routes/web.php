@@ -13,6 +13,9 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
    // retreve password  && forgot password Routes
    Route::post('/forgot-password', [forgotPassword::class, 'forgotPassword'])->name('forgotPassword');
