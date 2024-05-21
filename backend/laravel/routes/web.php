@@ -28,18 +28,6 @@ use App\Models\User;
    // retrve  new passeword
 //    Route::post('/reset-Password', [forgotPassword::class, 'resetPassword'])->name('resetPassword');
    // return  a view for page  that can  return view for page   change password
-//    Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
+   Route::get('/reset-password/{token}', [forgotPassword::class, 'resetPasswordView'])->name('resetPasswordView');
+   //login and  create an account
 
-   Route::get('/login', [AuthController::class, 'index']);
-   Route::post('/login', [AuthController::class, 'login'])->name('login_into_account');
-   //login and  create an accoun
-
-
-
-
-// CRUD intervenats
-Route::get('/ajouter-intervenants' , [intervenants::class , 'index']);
-
-// CRUD Region
-Route::get('/ajouter-region' , [ajouterRegions::class , 'index'])->name('ajouter-region');
-Route::post('/insertRegion' , [ajouterRegions::class , 'insert'])->name('insertRegion');

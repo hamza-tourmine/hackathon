@@ -88,12 +88,13 @@ class AuthController extends Controller
         }
     }
     // logout
-    // public function logout(Request $request)
-    // {
-    //     Auth::logout();
-    //     // Invalidate the session
-    //     $request->session()->invalidate();
-    //     // Redirect to the home page or any other desired page
-    //     return redirect('/');
-    // }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        // Invalidate the session
+        $request->session()->invalidate();
+        // Redirect to the home page or any other desired page
+        return redirect('/');
+    }
 }
